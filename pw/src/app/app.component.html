@@ -1,2 +1,38 @@
+<h1>Password Generator</h1>
 
+<!-- event handler (input)="method($event...)" -->
+<!-- passing evennt handler need $ for some reason -->
+<div>
+  <label>Enter Length</label>
+  <input (input)="onChangeLength($event)" />
+</div>
+<!-- use event handler (change) to manage changes -->
+<div>
+  <label>Use Letters</label>
+  <input (change)="onChangeLetters()" type="checkbox" />
+</div>
+
+<div>
+  <label>Use Numbers</label>
+  <input (change)="onChangeNumbers()" type="checkbox" />
+</div>
+
+<div>
+  <label>Use Symbols</label>
+  <input (change)="onChangeSymbols()" type="checkbox" />
+</div>
+
+<div>
+  <!-- (eventType)=" event handler from app.component.ts" -->
+  <button (click)="onButtonClick()">Generate!</button>
+</div>
+
+<div>
+  <label>Your Password</label>
+  <!-- [name of attribute to set]="name of property or function from component class" -->
+  <!-- angular updates page whenever property updates -->
+  <input [value]="password" />
+</div>
+<!-- can always reference component class property or method -->
+<!-- {{ password }} -->
 
